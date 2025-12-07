@@ -1,0 +1,22 @@
+# Copilot Reflection
+
+I used GitHub Copilot continuously while building my SimpleTask to-do list application. I used it to help generate component structures, React hook logic, navigation setup, and UI elements. For example, when creating the task list screen, I typed a comment describing that I needed a dynamic list of tasks, and Copilot suggested using `FlatList` with a `renderItem` function and a `keyExtractor`. I also used Copilot to help generate `useState` hooks for managing the list of tasks and the text input for the task form.
+
+When building the task form screen, Copilot helped suggest the `TextInput` component setup, the `onChangeText` handler, and the save button logic. I still reviewed every suggestion, adjusted variable names, and tested everything manually to make sure I understood what each line of code was doing.
+
+Overall, Copilot helped reduce the amount of repetitive code I had to write and made it easier to focus on how the app should work instead of writing everything from scratch.
+
+---
+
+## Example Where Copilot Was Not Ideal
+One specific issue happened when Copilot suggested separating the app into multiple files (`TaskListScreen.js` and `TaskFormScreen.js`) and importing them into `App.js`. Copilot generated import statements that looked correct, but they caused a runtime error.
+
+This happened because the exports and imports did not match correctly, and React Navigation could not recognize the screen components as valid functions. After debugging the issue, I fixed it by moving both screen components directly into the `App.js` file. This eliminated the import/export confusion and immediately resolved the rendering error. This helped me better understand how default exports and component imports work in React Native.
+
+---
+
+## Example Where Copilot helped
+Copilot significantly sped up my work when I built the task list UI. After I created the `tasks` state array using `useState`, Copilot generated the full `FlatList` setup, including the `renderItem` function, the layout for each task row, and the checkbox toggle logic. It also suggested using conditional styling to add a strikethrough effect when a task is marked as completed.
+
+This saved me a large amount of time because I did not have to manually look up the syntax for `FlatList`, touch handling, or conditional styles. Instead, I was able to quickly test and refine the behavior, such as toggling the task completion and navigating to the edit screen.
+
